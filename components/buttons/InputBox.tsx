@@ -20,7 +20,7 @@ const TextInput: React.FC<TextInputProps> = ({ label, placeholder, name, value, 
           fontSize: '11px',
           lineHeight: '16px',
           color: '#1A1A1A',
-          marginBottom: '8px', // gap of 8px
+          marginBottom: '8px',
         }}
       >
         {label}
@@ -35,9 +35,9 @@ const TextInput: React.FC<TextInputProps> = ({ label, placeholder, name, value, 
         fullWidth
         sx={{
           '& .MuiInputBase-root': {
-            width: '280px', // Fixed width from Figma
-            height: '32px', // Fixed height from Figma
-            padding: '8px 12px', // Padding from Figma
+            width: '280px',
+            height: '32px',
+            padding: '8px 12px',
           },
           '& .MuiInputBase-input': {
             fontFamily: 'Source Sans Pro, sans-serif',

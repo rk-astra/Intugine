@@ -6,8 +6,10 @@ import { fetchTripsFromDB } from '../actions/GetData';
 import { getServerSession } from 'next-auth';
 import Login from '@/components/auth/Login';
 import TripListTable2 from '@/components/tripListTableV2/TripListTable2';
-import { authOptions } from '../utils/authOptions';
+import { authOptions } from '../../utils/authOptions';
 import { Trip } from '@/types/tripTypes';
+
+export const dynamic = 'force-dynamic';
 
 const Dashboard = async () => {
   console.log("In Dashboard component, starting to load...");

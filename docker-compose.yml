@@ -24,8 +24,6 @@ services:
     ports:
       - '3000:3000'
     environment:
-      - NODE_ENV=development
-    volumes:
-      - ./:/app
+      - NODE_ENV=production
     depends_on:
       - keycloak

@@ -29,7 +29,7 @@ interface Trip {
 interface UpdateTripDialogProps {
   open: boolean;
   onClose: () => void;
-  onSubmit: (formState: UpdateTripForm[]) => void;  // Accepts an array of UpdateTripForm
+  onSubmit: (formState: UpdateTripForm[]) => void;
   trips: Trip[];
 }
 
@@ -48,9 +48,9 @@ const UpdateTripDialog: React.FC<UpdateTripDialogProps> = ({
         time: trip.tripStartTime ? new Date(trip.tripStartTime) : null,
       }));
 
-      setFormState(initialFormState); // Only set form state when trips change
+      setFormState(initialFormState);
     }
-  }, [trips]); // Dependency array should contain `trips`
+  }, [trips]);
 
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
 
@@ -79,8 +79,8 @@ const UpdateTripDialog: React.FC<UpdateTripDialogProps> = ({
   };
 
   const handleSubmit = async () => {
-    onSubmit(formState);  // Pass the form state to the parent component
-    onClose();  // Close the dialog after submission
+    onSubmit(formState); 
+    onClose();
   };
 
   return (
@@ -173,11 +173,11 @@ const UpdateTripDialog: React.FC<UpdateTripDialogProps> = ({
                 value={formState[index]?.time || null}
                 onChange={(newDate) => handleDateChange(index, newDate)}
                 slots={{
-                  textField: TextField,  // Use TextField as the input slot
+                  textField: TextField, 
                 }}
                 slotProps={{
                   textField: {
-                    fullWidth: true,  // Spread fullWidth property here
+                    fullWidth: true, 
                   },
                 }}
               />

@@ -110,7 +110,7 @@ const TripListTable2: React.FC<TripListTableProps> = ({ trips }) => {
 
   const refetchTrips = async () => {
     try {
-      const fetchedTrips = await fetchTripsFromDB(); // Fetch updated trips from the backend
+      const fetchedTrips = await fetchTripsFromDB();
       setTripData(fetchedTrips);
     } catch (error) {
       console.error("Failed to refetch trips:", error);
@@ -139,7 +139,7 @@ const TripListTable2: React.FC<TripListTableProps> = ({ trips }) => {
       createdAt: new Date().toISOString(),
     };
   
-    setTripData((prevTrips) => [...prevTrips, newTrip]); // Add the new trip properly
+    setTripData((prevTrips) => [...prevTrips, newTrip]);
     setIsAddDialogOpen(false);
   
     try {

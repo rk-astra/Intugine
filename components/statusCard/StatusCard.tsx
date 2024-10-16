@@ -53,19 +53,14 @@ interface TripListTableProps {
 }
 
 const StatusCard: React.FC<TripListTableProps> = ({ trips }) => {
-  // Calculate total trips
   const totalTrips = trips.length;
 
-  // Calculate delivered trips
   const deliveredTrips = trips.filter(trip => trip.currenStatus === 'Delivered').length;
 
-  // Calculate delayed consignments based on isDelayed function
   const delayedTrips = trips.filter(isDelayed).length;
 
-  // Calculate in-transit trips
   const inTransitTrips = trips.filter(trip => trip.currenStatus === 'In Transit').length;
 
-  // Calculate on-time percentage out of delivered trips
   const onTimeDeliveredTrips = trips.filter(trip => {
     if (trip.currenStatus === 'Delivered' && trip.tripEndTime && trip.etaDays > 0) {
       const actualDuration = (new Date(trip.tripEndTime).getTime() - new Date(trip.tripStartTime).getTime()) / (1000 * 60 * 60 * 24);
@@ -84,7 +79,7 @@ const StatusCard: React.FC<TripListTableProps> = ({ trips }) => {
         alignItems: 'flex-start',
         padding: '16px 24px 24px',
         gap: '24px',
-        width: '100%', // Full width of the container
+        width: '100%',
         boxSizing: 'border-box',
       }}
     >
@@ -92,7 +87,7 @@ const StatusCard: React.FC<TripListTableProps> = ({ trips }) => {
       <Paper
         elevation={0}
         sx={{
-          flexGrow: 5, // Relative size 4
+          flexGrow: 5, 
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'flex-start',

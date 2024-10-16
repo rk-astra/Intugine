@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import client from "@/prisma/singleton";
 
+export const dynamic = 'force-dynamic';
+
 interface TripData {
     tripId: string;
     transporter: string;

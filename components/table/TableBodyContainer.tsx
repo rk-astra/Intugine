@@ -12,13 +12,13 @@ import TripStatusButton from "../buttons/TripStatusButton";
 import TATStatusButton from "../buttons/TATStatusButton";
 
 interface TableBodyContainerProps {
-  currentData: Trip[]; // Pass the current page data
-  selectedRows: string[]; // Pass selected rows
-  handleRowSelect: (tripId: string) => void; // Pass the row select handler
-  selectAll: boolean; // Whether to select all rows
-  handleSelectAll: () => void; // Handler to toggle select all
-  handleColumnClick: (column: keyof Trip | 'tripStatus' | 'tatStatus') => void; // Handler for sorting column
-  TAT: (trip: Trip) => string; // Function to compute TAT status
+  currentData: Trip[];
+  selectedRows: string[]; 
+  handleRowSelect: (tripId: string) => void;
+  selectAll: boolean; 
+  handleSelectAll: () => void; 
+  handleColumnClick: (column: keyof Trip | 'tripStatus' | 'tatStatus') => void;
+  TAT: (trip: Trip) => string;
 }
 
 const TableBodyContainer: React.FC<TableBodyContainerProps> = ({

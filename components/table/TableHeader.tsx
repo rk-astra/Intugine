@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 
 interface TableHeaderProps {
-    selectedRows: string[]; // Pass selectedRows as a prop
-    openUpdateDialog: () => void; // Correct the function prop types
-    openAddDialog: () => void;     // Correct the function prop types
+    selectedRows: string[];
+    openUpdateDialog: () => void;
+    openAddDialog: () => void;     
   }
   
   const TableHeader: React.FC<TableHeaderProps> = ({ selectedRows, openUpdateDialog, openAddDialog }) => {
@@ -51,7 +51,7 @@ interface TableHeaderProps {
                 textTransform: "none",
                 padding: "8px",
               }}
-              onClick={openUpdateDialog} // Correct: Don't invoke the function, just pass it
+              onClick={openUpdateDialog}
             >
               Update status
             </Button>
@@ -71,7 +71,7 @@ interface TableHeaderProps {
               textTransform: "none",
               padding: "8px",
             }}
-            onClick={openAddDialog} // Correct: Don't invoke the function, just pass it
+            onClick={openAddDialog}
           >
             Add Trip
           </Button>

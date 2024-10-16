@@ -1,5 +1,3 @@
-// src/helpers/TAT.ts
-
 import { Trip } from "@/types/tripTypes";
 
 export const TAT = (trip: Trip): string => {

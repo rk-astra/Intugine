@@ -3,10 +3,10 @@ import { Box, Typography, Button } from '@mui/material';
 import DeleteTripHandler from '@/components/addTrip/DeleteTrip';
 
 interface TableHeaderProps {
-  selectedRows: string[]; // Array of selected row IDs
-  openUpdateDialog: () => void; // Function to open the update dialog
-  openAddDialog: () => void; // Function to open the add trip dialog
-  onTripsDeleted: () => Promise<void>; // Callback to refetch trips after deletion
+  selectedRows: string[]; 
+  openUpdateDialog: () => void;
+  openAddDialog: () => void;
+  onTripsDeleted: () => Promise<void>;
 }
 
 const TableHeader2: React.FC<TableHeaderProps> = ({ selectedRows, openUpdateDialog, openAddDialog, onTripsDeleted }) => {
@@ -37,7 +37,6 @@ const TableHeader2: React.FC<TableHeaderProps> = ({ selectedRows, openUpdateDial
 
       <Box sx={{ display: 'flex', gap: '8px' }}>
 
-        {/* Use the DeleteTripHandler component for delete logic */}
         <DeleteTripHandler selectedRows={selectedRows} onTripsDeleted={onTripsDeleted} />
 
         {selectedRows.length >= 1 && (
