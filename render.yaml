@@ -25,18 +25,13 @@ services:
       - key: KEYCLOAK_ADMIN_PASSWORD
         value: admin
     healthCheckPath: '/auth'
-    containerPorts:
-      - port: 8080
-        protocol: TCP
 
   - name: nextjs-app
     type: web
-    env: node
+    env: docker # Change from 'node' to 'docker' since you're using Dockerfile
     plan: starter
     autoDeploy: true
-    buildCommand: npm install && npm run build
-    startCommand: npm start
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: ./Dockerfile # Ensure this is the correct path to your Dockerfile
     envVars:
       - key: DATABASE_URL
         value: postgresql://TripData_owner:cQtvPYd29xya@ep-solitary-sunset-a1alctl4.ap-southeast-1.aws.neon.tech/TripData?sslmode=require
@@ -54,16 +49,3 @@ services:
         value: http://localhost:8080/realms/develop
       - key: NEXT_PUBLIC_KEYCLOAK_CLIENT_ID
         value: frontend
-    containerPorts:
-      - port: 3000
-        protocol: TCP
-
-databases:
-  - name: keycloak-db
-    plan: starter
-    region: oregon
-    type: postgres
-    password: cQtvPYd29xya
-    user: TripData_owner
-    database: TripData
-    autoDeploy: true
